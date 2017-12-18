@@ -1,0 +1,2009 @@
+(saveFormat "7.0")
+(date "Fri 11/Nov/2016 12:53:14 ")
+(veerev "9.32.17704.1")
+(platform "PC")
+(execMode v6)
+(prefExecMode v9)
+(filterNAN 0)
+(workspaceStackingOrder M F2)
+(sysconfig
+(iodevice "newInstrument4"
+(type ASRL)
+(channel 200)
+(readTerm "\n")
+(fs ",")
+(eol "\n")
+(multiField dataOnly)
+(arrayFormat linear)
+(timeout 5)
+(byteOrder 0)
+(ppAddr "ASRL10::INSTR")
+(model "")
+(eoiEnabled 1)
+(VISAlias "LPT1")
+(VISAddr "ASRL10::INSTR")
+(model ""
+(standard 488.2))
+(baudRate 9600)
+(charSize 8)
+(stopBits 1)
+(parity off)
+(handshake off)
+(recvBufferSize 4096))
+(iodevice "newInstrument5"
+(type GPIB-VISA)
+(channel 131)
+(readTerm "\n")
+(fs ",")
+(eol "\n")
+(multiField dataOnly)
+(arrayFormat linear)
+(timeout 5)
+(byteOrder 0)
+(idn "nigpib-vxi")
+(isPresent 1)
+(ppAddr "GPIB1::1::0::INSTR")
+(ScpiFileName "nigpib-vxi.xml")
+(model "nigpib-vxi")
+(eoiEnabled 1)
+(VISAddr "GPIB1::1::0::INSTR")
+(model "nigpib-vxi"
+(standard 488)))
+(iodevice "TVS645"
+(type GPIB-VISA)
+(channel 131)
+(readTerm "\n")
+(fs ",")
+(eol "\n")
+(multiField dataOnly)
+(arrayFormat linear)
+(timeout 5)
+(byteOrder 0)
+(idn "tetvs645")
+(isPresent 1)
+(ppAddr "GPIB1::1::6::INSTR")
+(ScpiFileName "tetvs645.xml")
+(model "tetvs645")
+(eoiEnabled 1)
+(VISAddr "GPIB1::1::6::INSTR")
+(model "tetvs645"
+(standard 488))))
+(SaveCF no)
+(device 0 ROOTCONTEXT
+(assemblyRefs
+(assemblyRef 1
+(displayName
+"mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")
+(filename "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\mscorlib.dll"))
+(assemblyRef 2
+(displayName
+"System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")
+(filename "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\System.dll"))
+(assemblyRef 3
+(displayName
+"System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+)
+(filename
+"C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\System.Drawing.dll"))
+(assemblyRef 4
+(displayName
+"System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+)
+(filename
+"C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\System.Windows.Forms.dll"))
+(selectedNamespaces "System.Text.RegularExpressions,"))
+(properties
+(variableName Main)
+(variableScope glob)
+(trigMode deg)
+(nextID 135)
+(popupTitleText "Untitled")
+(popupMoveable 1)
+(deleteGlobals 0))
+(deviceList
+(UserFunctions
+(nextID 7)
+(context 5
+(properties
+(name "GetAxisParams")
+(variableName GetAxisParams)
+(variableScope glob)
+(trigMode deg)
+(nextID 10)
+(popupTitleText "UserFunction")
+(popupMoveable 1))
+(interface
+(input 1
+(name "Collection")
+(optional yes))
+(input 2
+(name "axis")
+(optional yes))
+(output 1
+(type data)
+(name "Record")
+(lock constraints)
+(optional yes)))
+(deviceList
+(device 0 DOTNETBUILDER
+(properties
+(name "System.Text.RegularExpressions.Regex")
+(variableScope cont)
+(transactions 5 "return = regex.Matches(settings)"
+"SCANum = regex.GroupNumberFromName(\"SCAL\")"
+"OFFSNum = regex.GroupNumberFromName(\"OFFS\")"
+"SIZENum = regex.GroupNumberFromName(\"SIZE\")"
+"UNITNum = regex.GroupNumberFromName(\"UNIT\")")
+(parmInfo 15 "2" "T 0" "T 0" "2" "T 0" "T 0" "2" "T 0" "T 0" "2" "T 0" "T 0" "2"
+"T 0" "T 0")
+(memberInfos 5
+"System.Text.RegularExpressions.MatchCollection Matches(System.String)"
+"Int32 GroupNumberFromName(System.String)"
+"Int32 GroupNumberFromName(System.String)"
+"Int32 GroupNumberFromName(System.String)"
+"Int32 GroupNumberFromName(System.String)")
+(statics 5 "0" "0" "0" "0" "0")
+(assemblyQualifiedName
+"System.Text.RegularExpressions.Regex, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+)
+(objectName "regex"))
+(interface
+(input 1
+(name "regex")
+(optional yes))
+(input 2
+(name "settings")
+(requires
+(datatype Text)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(output 1
+(name "return")
+(optional yes))
+(output 2
+(name "SCANum")
+(optional yes))
+(output 3
+(name "SIZENum")
+(optional yes))
+(output 4
+(name "UNITNum")
+(optional yes))
+(output 5
+(name "OFFSNum")
+(optional yes)))
+(implementation))
+(device 1 DOTNETBUILDER
+(properties
+(name "System.Text.RegularExpressions.MatchCollection")
+(variableScope cont)
+(transactions 4 "SCAL = matchCollection.Item(0).Groups.Item(SCALNum).Value"
+"SIZE = matchCollection.Item(0).Groups.Item(SIZENum).Value"
+"UNIT = matchCollection.Item(0).Groups.Item(UNITNum).Value"
+"OFFS = matchCollection.Item(0).Groups.Item(OffsNum).Value")
+(parmInfo 16 "3" "T 0" "T 0" "T 0" "3" "T 0" "T 0" "T 0" "3" "T 0" "T 0" "T 0"
+"3" "T 0" "T 0" "T 0")
+(memberInfos 4 "System.String Value" "System.String Value" "System.String Value"
+"System.String Value")
+(statics 4 "0" "0" "0" "0")
+(assemblyQualifiedName
+"System.Text.RegularExpressions.MatchCollection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+)
+(objectName "matchCollection"))
+(interface
+(input 1
+(name "matchCollection")
+(optional yes))
+(input 2
+(name "SIZENum")
+(requires
+(datatype Int32)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(input 3
+(name "UNITNum")
+(requires
+(datatype Int32)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(input 4
+(name "OffsNum")
+(requires
+(datatype Int32)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(input 5
+(name "SCALNum")
+(requires
+(datatype Int32)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(output 1
+(name "SCAL")
+(optional yes))
+(output 2
+(name "SIZE")
+(optional yes))
+(output 3
+(name "UNIT")
+(optional yes))
+(output 4
+(name "OFFS")
+(optional yes)))
+(implementation))
+(device 2 TORECORD
+(properties
+(variableScope cont)
+(outputType array))
+(interface
+(input 1
+(name "SCAL")
+(optional yes))
+(input 2
+(name "SIZE")
+(optional yes))
+(input 3
+(name "UNIT")
+(optional yes))
+(input 4
+(name "OFFS")
+(optional yes))
+(output 1
+(name "Record"))))
+(device 3 FROMRECORD
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "Record Data")
+(requires
+(datatype Record))
+(lock name constraints))
+(output 1
+(name "NAME")
+(tag "A")
+(optional yes))
+(output 2
+(name "Record")
+(tag "B")
+(optional yes))))
+(device 4 DOTNETBUILDER
+(properties
+(name "System.Text.RegularExpressions.Regex")
+(variableScope cont)
+(transactions 1
+"regex = CreateInstance(\"System\", \"System.Text.RegularExpressions.Regex\", pattern)"
+)
+(parmInfo 5 "4" "T 0" "T 0" "T 0" "T 0")
+(memberInfos 1 "Void .ctor(System.String)")
+(statics 1 "0")
+(assemblyQualifiedName
+"System.Text.RegularExpressions.Regex, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+)
+(objectName "regex"))
+(interface
+(input 1
+(name "pattern")
+(requires
+(datatype Text)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(output 1
+(name "regex")
+(optional yes)))
+(implementation))
+(device 5 LITERALCONSTANT
+(properties
+(name "Text")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data 
+"\\(TYPE (?<TYPE>.*?) SCAL (?<SCAL>.*?) OFFS (?<OFFS>.*?) SIZE (?<SIZE>.*?) UNIT \"(?<UNIT>.*?)\"\\)"
+))
+(initValue Text
+(data  ""))))
+(device 6 FOREACH
+(properties
+(name "For Each Element In")
+(variableScope cont))
+(interface
+(input 1
+(name "Collection")
+(tag "Collection")
+(lock name)
+(optional yes))
+(output 1
+(name "Element")
+(lock name constraints))))
+(device 7 CALL
+(properties
+(name "Call RealConcat")
+(variableScope cont)
+(callFunc "RealConcat")
+(parmMode rev30))
+(interface
+(input 1
+(name "Str1")
+(optional yes))
+(input 2
+(name "Str2")
+(optional yes))
+(output 1
+(name "Concat")
+(lock name constraints)
+(optional yes))))
+(device 9 TORECORD
+(properties
+(variableScope cont)
+(outputType scalar))
+(interface
+(input 1
+(name "Name")
+(optional yes))
+(input 2
+(name "Scaling")
+(optional yes))
+(output 1
+(name "Record"))))
+(configuration
+(connect D4:1 D0:1)
+(connect D3:2 D0:2)
+(connect D0:1 D1:1)
+(connect D0:3 D1:2)
+(connect D0:4 D1:3)
+(connect D0:5 D1:4)
+(connect D0:2 D1:5)
+(connect D1:1 D2:1)
+(connect D1:2 D2:2)
+(connect D1:3 D2:3)
+(connect D1:4 D2:4)
+(connect D6:1 D3:1)
+(connect D7:1 D4:1)
+(connect I1:1 D6:1)
+(connect I2:1 D7:1)
+(connect D5:1 D7:2)
+(connect D3:1 D8:1)
+(connect D2:1 D8:2)
+(connect D8:1 O1:1)))
+(contextCarrier
+(active detail)
+(detail
+(extent 777 256)
+(anchorPt 0 0)
+(configuration
+(devCarrierFor 0
+(active icon)
+(icon
+(extent 54 54))
+(open
+(extent 424 116))
+(terminals on)
+(pinCenter 430 140))
+(devCarrierFor 1
+(active icon)
+(icon
+(extent 44 54))
+(open
+(extent 334 106))
+(terminals on)
+(pinCenter 570 140))
+(devCarrierFor 2
+(active icon)
+(icon
+(extent 78 51)
+(iconImage "build.icn"))
+(open
+(extent 104 82))
+(terminals on)
+(pinCenter 710 140))
+(devCarrierFor 3
+(active icon)
+(icon
+(extent 34 25)
+(iconImage "unbuild.icn"))
+(open
+(extent 22 90))
+(terminals on)
+(pinCenter 330 180))
+(devCarrierFor 4
+(active icon)
+(icon
+(extent 34 25))
+(open
+(extent 221 74))
+(terminals on)
+(pinCenter 330 130))
+(devCarrierFor 5
+(active icon)
+(icon
+(extent 25 15))
+(open
+(extent 614 46))
+(pinCenter 220 130))
+(devCarrierFor 6
+(active icon)
+(icon
+(extent 122 51)
+(iconImage "loop.icn"))
+(open)
+(pinCenter 120 90))
+(devCarrierFor 7
+(active icon)
+(icon
+(extent 34 25))
+(open
+(extent 176 51))
+(terminals on)
+(pinCenter 270 130))
+(devCarrierFor 9
+(active icon)
+(icon
+(extent 78 51)
+(iconImage "build.icn"))
+(open
+(extent 97 54))
+(terminals on)
+(pinCenter 850 190))
+(connect D4:1 D0:1
+(points 4 349 130 370 130 370 120 400 120))
+(connect D3:2 D0:2
+(points 4 349 190 370 190 370 160 400 160))
+(connect D0:1 D1:1
+(points 2 459 120 545 120))
+(connect D0:3 D1:2
+(points 4 459 140 470 140 470 130 545 130))
+(connect D0:4 D1:3
+(points 4 459 150 470 150 470 140 545 140))
+(connect D0:5 D1:4
+(points 4 459 160 480 160 480 150 545 150))
+(connect D0:2 D1:5
+(points 6 459 130 470 130 470 110 490 110 490 160 545 160))
+(connect D1:1 D2:1
+(points 2 594 120 668 120))
+(connect D1:2 D2:2
+(points 2 594 130 668 130))
+(connect D1:3 D2:3
+(points 2 594 140 668 140))
+(connect D1:4 D2:4
+(points 2 594 150 668 150))
+(connect D6:1 D3:1
+(points 4 183 90 200 90 200 180 310 180))
+(connect D7:1 D4:1
+(points 2 289 130 310 130))
+(connect I1:1 D6:1
+(points 4 0 57 10 57 10 90 56 90))
+(connect I2:1 D7:1
+(points 4 0 197 190 197 190 120 250 120))
+(connect D5:1 D7:2
+(points 2 235 130 250 140))
+(connect D3:1 D8:1
+(points 6 349 170 380 170 380 190 780 190 780 180 808 180))
+(connect D2:1 D8:2
+(points 4 751 140 770 140 770 200 808 200))
+(connect D8:1 O1:1
+(points 4 891 190 910 190 910 127 776 127)))
+(stackingOrder 6 7 0 1 5 2 4 3 8))))
+(context 6
+(properties
+(name "GetMaxMinNan")
+(variableName GetMaxMinNan)
+(variableScope glob)
+(trigMode deg)
+(nextID 7)
+(popupTitleText "UserFunction")
+(popupMoveable 1))
+(interface
+(input 1
+(name "Collection")
+(optional yes))
+(output 1
+(type data)
+(name "Record")
+(lock constraints)
+(optional yes)))
+(deviceList
+(device 0 DOTNETBUILDER
+(properties
+(name "System.Text.RegularExpressions.Regex")
+(variableScope cont)
+(transactions 5 "return = regex.Matches(settings)"
+"FORMNum = regex.GroupNumberFromName(\"FORM\")"
+"NanNum = regex.GroupNumberFromName(\"NAN\")"
+"ORANNum = regex.GroupNumberFromName(\"ORAN\")"
+"URANNum = regex.GroupNumberFromName(\"URAN\")")
+(parmInfo 15 "2" "T 0" "T 0" "2" "T 0" "T 0" "2" "T 0" "T 0" "2" "T 0" "T 0" "2"
+"T 0" "T 0")
+(memberInfos 5
+"System.Text.RegularExpressions.MatchCollection Matches(System.String)"
+"Int32 GroupNumberFromName(System.String)"
+"Int32 GroupNumberFromName(System.String)"
+"Int32 GroupNumberFromName(System.String)"
+"Int32 GroupNumberFromName(System.String)")
+(statics 5 "0" "0" "0" "0" "0")
+(assemblyQualifiedName
+"System.Text.RegularExpressions.Regex, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+)
+(objectName "regex"))
+(interface
+(input 1
+(name "regex")
+(optional yes))
+(input 2
+(name "settings")
+(requires
+(datatype Text)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(output 1
+(name "return")
+(optional yes))
+(output 2
+(name "FORMNum")
+(optional yes))
+(output 3
+(name "NanNum")
+(optional yes))
+(output 4
+(name "ORANNum")
+(optional yes))
+(output 5
+(name "URANNum")
+(optional yes)))
+(implementation))
+(device 1 DOTNETBUILDER
+(properties
+(name "System.Text.RegularExpressions.MatchCollection")
+(variableScope cont)
+(transactions 4 "FORM = matchCollection.Item(0).Groups.Item(FORMNum).Value"
+"NAN = matchCollection.Item(0).Groups.Item(NANNum).Value"
+"ORAN = matchCollection.Item(0).Groups.Item(ORANNum).Value"
+"URAN = matchCollection.Item(0).Groups.Item(URANNum).Value")
+(parmInfo 16 "3" "T 0" "T 0" "T 0" "3" "T 0" "T 0" "T 0" "3" "T 0" "T 0" "T 0"
+"3" "T 0" "T 0" "T 0")
+(memberInfos 4 "System.String Value" "System.String Value" "System.String Value"
+"System.String Value")
+(statics 4 "0" "0" "0" "0")
+(assemblyQualifiedName
+"System.Text.RegularExpressions.MatchCollection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+)
+(objectName "matchCollection"))
+(interface
+(input 1
+(name "matchCollection")
+(optional yes))
+(input 2
+(name "FORMNum")
+(requires
+(datatype Int32)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(input 3
+(name "NANNum")
+(requires
+(datatype Int32)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(input 4
+(name "ORANNum")
+(requires
+(datatype Int32)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(input 5
+(name "URANNum")
+(requires
+(datatype Int32)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(output 1
+(name "FORM")
+(optional yes))
+(output 2
+(name "NAN")
+(optional yes))
+(output 3
+(name "ORAN")
+(optional yes))
+(output 4
+(name "URAN")
+(optional yes)))
+(implementation))
+(device 2 TORECORD
+(properties
+(variableScope cont)
+(outputType array))
+(interface
+(input 1
+(name "FORM")
+(optional yes))
+(input 2
+(name "NAN")
+(optional yes))
+(input 3
+(name "ORAN")
+(optional yes))
+(input 4
+(name "URAN")
+(optional yes))
+(output 1
+(name "Record"))))
+(device 3 FROMRECORD
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "Record Data")
+(requires
+(datatype Record))
+(lock name constraints))
+(output 1
+(name "NAME")
+(tag "A")
+(optional yes))
+(output 2
+(name "Record")
+(tag "B")
+(optional yes))))
+(device 4 DOTNETBUILDER
+(properties
+(name "System.Text.RegularExpressions.Regex")
+(variableScope cont)
+(transactions 1
+"regex = CreateInstance(\"System\", \"System.Text.RegularExpressions.Regex\", pattern)"
+)
+(parmInfo 5 "4" "T 0" "T 0" "T 0" "T 0")
+(memberInfos 1 "Void .ctor(System.String)")
+(statics 1 "0")
+(assemblyQualifiedName
+"System.Text.RegularExpressions.Regex, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+)
+(objectName "regex"))
+(interface
+(input 1
+(name "pattern")
+(requires
+(datatype Text)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(output 1
+(name "regex")
+(optional yes)))
+(implementation))
+(device 5 LITERALCONSTANT
+(properties
+(name "Text")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data 
+"ENC\\(FORM (?<FORM>.*?) NVAL (?<NAN>.*?) ORAN (?<ORAN>.*?) URAN (?<URAN>.*?)\\)"
+))
+(initValue Text
+(data  ""))))
+(device 6 FOREACH
+(properties
+(name "For Each Element In")
+(variableScope cont))
+(interface
+(input 1
+(name "Collection")
+(tag "Collection")
+(lock name)
+(optional yes))
+(output 1
+(name "Element")
+(lock name constraints))))
+(configuration
+(connect D4:1 D0:1)
+(connect D3:2 D0:2)
+(connect D0:1 D1:1)
+(connect D0:2 D1:2)
+(connect D0:3 D1:3)
+(connect D0:4 D1:4)
+(connect D0:5 D1:5)
+(connect D1:1 D2:1)
+(connect D1:2 D2:2)
+(connect D1:3 D2:3)
+(connect D1:4 D2:4)
+(connect D6:1 D3:1)
+(connect D5:1 D4:1)
+(connect I1:1 D6:1)
+(connect D2:1 O1:1)))
+(contextCarrier
+(active detail)
+(detail
+(extent 777 256)
+(anchorPt -9 120)
+(configuration
+(devCarrierFor 0
+(active icon)
+(icon
+(extent 54 54))
+(open
+(extent 424 182))
+(terminals on)
+(pinCenter 440 170))
+(devCarrierFor 1
+(active icon)
+(icon
+(extent 44 54))
+(open
+(extent 544 182))
+(terminals on)
+(pinCenter 540 170))
+(devCarrierFor 2
+(active icon)
+(icon
+(extent 78 51)
+(iconImage "build.icn"))
+(open
+(extent 104 82))
+(terminals on)
+(pinCenter 660 170))
+(devCarrierFor 3
+(active icon)
+(icon
+(extent 34 25)
+(iconImage "unbuild.icn"))
+(open
+(extent 20 90))
+(terminals on)
+(pinCenter 330 180))
+(devCarrierFor 4
+(active icon)
+(icon
+(extent 34 25))
+(open
+(extent 221 74))
+(terminals on)
+(pinCenter 330 150))
+(devCarrierFor 5
+(active icon)
+(icon
+(extent 25 15))
+(open
+(extent 614 46))
+(pinCenter 260 150))
+(devCarrierFor 6
+(active icon)
+(icon
+(extent 122 51)
+(iconImage "loop.icn"))
+(open)
+(pinCenter 120 90))
+(connect D4:1 D0:1
+(points 2 349 150 410 150))
+(connect D3:2 D0:2
+(points 2 349 190 410 190))
+(connect D0:1 D1:1
+(points 2 469 150 515 150))
+(connect D0:2 D1:2
+(points 2 469 160 515 160))
+(connect D0:3 D1:3
+(points 2 469 170 515 170))
+(connect D0:4 D1:4
+(points 2 469 180 515 180))
+(connect D0:5 D1:5
+(points 2 469 190 515 190))
+(connect D1:1 D2:1
+(points 2 564 150 618 150))
+(connect D1:2 D2:2
+(points 2 564 160 618 160))
+(connect D1:3 D2:3
+(points 2 564 170 618 170))
+(connect D1:4 D2:4
+(points 2 564 180 618 180))
+(connect D6:1 D3:1
+(points 4 183 90 200 90 200 180 310 180))
+(connect D5:1 D4:1
+(points 2 275 150 310 150))
+(connect I1:1 D6:1
+(points 4 9 7 10 7 10 90 56 90))
+(connect D2:1 O1:1
+(points 4 701 170 720 170 720 7 785 7)))
+(stackingOrder 3 6 0 1 2 4 5))))
+(context 3
+(properties
+(name "GetPattOpt")
+(variableName GetPattOpt)
+(variableScope glob)
+(trigMode deg)
+(nextID 11)
+(popupTitleText "Pattern Options")
+(popupMoveable 1))
+(interface
+(output 1
+(type data)
+(name "X")
+(lock constraints)
+(optional yes)))
+(deviceList
+(device 0 CONFIRM25
+(properties
+(name "Save Settings")
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(device 1 ENUMCONSTANT
+(properties
+(name "Cyclic Button")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Enum")
+(lock name constraints))
+(output 2
+(name "Ordinal")
+(lock name constraints)))
+(implementation
+(value Enum
+(values
+("GT" 0)
+("LT" 1)
+("OFF" 2))
+(data  "OFF"))
+(initValue Text
+(data  "GT"))))
+(device 2 KNOB
+(properties
+(name "Real64 Knob")
+(variableScope cont)
+(enableEditing 1)
+(range 1E-009 1)
+(detents 0.001))
+(interface
+(output 1
+(name "Real64")
+(lock name constraints)))
+(implementation
+(value Real64
+(data  0.747))
+(initValue Real
+(data  0))))
+(device 3 LABEL
+(properties
+(name "Pattern Qualifier")
+(variableScope cont)
+(labelValue "Pattern Qualifier"))
+(implementation))
+(device 4 LABEL
+(properties
+(name "Pattern Width")
+(variableScope cont)
+(labelValue "Pattern Width"))
+(implementation))
+(device 5 LITERALCONSTANT
+(properties
+(name "Text")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data  "TRIG:A:LOG:PATT:WIDT "))
+(initValue Text
+(data  ""))))
+(device 6 LITERALCONSTANT
+(properties
+(name "Text")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data  "TRIG:A:LOG:PATT:QUAL "))
+(initValue Text
+(data  ""))))
+(device 7 CALL
+(properties
+(name "Call RealConcat")
+(variableScope cont)
+(callFunc "RealConcat")
+(parmMode rev30))
+(interface
+(input 1
+(name "Str1")
+(optional yes))
+(input 2
+(name "Str2")
+(optional yes))
+(output 1
+(name "Concat")
+(lock name constraints)
+(optional yes))))
+(device 8 CALL
+(properties
+(name "Call RealConcat")
+(variableScope cont)
+(callFunc "RealConcat")
+(parmMode rev30))
+(interface
+(input 1
+(name "Str1")
+(optional yes))
+(input 2
+(name "Str2")
+(optional yes))
+(output 1
+(name "Concat")
+(lock name constraints)
+(optional yes))))
+(device 9 COLLECTOR
+(properties
+(variableScope cont)
+(output1D 0))
+(interface
+(input 1
+(name "Data")
+(tag "Data"))
+(input 2
+(type trigger)
+(name "XEQ")
+(lock name constraints))
+(output 1
+(name "Array")
+(tag "Array"))))
+(device 10 JUNCTION
+(properties
+(name "JCT")
+(variableScope cont))
+(interface
+(input 1
+(name "A"))
+(input 2
+(name "B"))
+(output 1
+(name "Data"))))
+(configuration
+(connect D0:1 D1:0)
+(connect D1:0 D2:0)
+(connect D6:1 D7:1)
+(connect D1:1 D7:2)
+(connect D5:1 D8:1)
+(connect D2:1 D8:2)
+(connect D10:1 D9:1)
+(connect D2:0 D9:2)
+(connect D7:1 D10:1)
+(connect D8:1 D10:2)
+(connect D9:1 O1:1))
+(ShowOnExecPanel
+(relativeOrigin 738 186)))
+(contextCarrier
+(active detail)
+(panel
+(extent 220 278)
+(drawGrid "on")
+(widget 0 detail
+(relativeOrigin 0 250)
+(PID 0)
+(title off)
+(tabIndex 0)
+(borderStyle none)
+(extent 210 22))
+(widget 3 detail
+(relativeOrigin 0 0)
+(PID 1)
+(title off)
+(tabStop off)
+(tabIndex 1)
+(borderStyle none)
+(extent 210 30)
+(just l))
+(widget 1 detail
+(relativeOrigin 0 30)
+(PID 2)
+(title off)
+(tabIndex 2)
+(borderStyle flat)
+(extent 206 25)
+(format cyclic))
+(widget 4 detail
+(relativeOrigin 0 60)
+(PID 3)
+(title off)
+(tabStop off)
+(tabIndex 3)
+(borderStyle none)
+(extent 210 30)
+(just l))
+(widget 2 detail
+(relativeOrigin 0 100)
+(PID 4)
+(title off)
+(tabIndex 4)
+(borderStyle flat)
+(extent 215 137)
+(layout horizontal)
+(fastmode off)))
+(detail
+(extent 1098 444)
+(anchorPt 54 -77)
+(configuration
+(devCarrierFor 0
+(active open)
+(icon
+(extent 82 0))
+(open
+(extent 47 22))
+(title off)
+(pinCenter 140 80))
+(devCarrierFor 1
+(active open)
+(icon)
+(open
+(extent 113 25)
+(format cyclic))
+(pinCenter 230 150))
+(devCarrierFor 2
+(active open)
+(icon)
+(open
+(extent 122 137)
+(layout horizontal)
+(fastmode off))
+(pinCenter 230 310))
+(devCarrierFor 3
+(active open)
+(icon
+(extent 96 0))
+(open
+(extent 100 27)
+(just l))
+(title off)
+(pinCenter 230 100))
+(devCarrierFor 4
+(active open)
+(icon
+(extent 80 0))
+(open
+(extent 85 27)
+(just l))
+(title off)
+(pinCenter 210 200))
+(devCarrierFor 5
+(active icon)
+(icon
+(extent 25 15))
+(open
+(extent 174 29))
+(pinCenter 330 290))
+(devCarrierFor 6
+(active icon)
+(icon
+(extent 25 15))
+(open
+(extent 174 29))
+(pinCenter 330 120))
+(devCarrierFor 7
+(active icon)
+(icon
+(extent 99 25))
+(open
+(extent 176 51))
+(terminals on)
+(pinCenter 430 130))
+(devCarrierFor 8
+(active icon)
+(icon
+(extent 99 25))
+(open
+(extent 176 51))
+(terminals on)
+(pinCenter 420 300))
+(devCarrierFor 9
+(active icon)
+(icon
+(extent 83 25))
+(open)
+(terminals on)
+(pinCenter 700 210))
+(devCarrierFor 10
+(active icon)
+(icon
+(extent 26 25))
+(open)
+(terminals on)
+(pinCenter 570 170))
+(connect D0:1 D1:0
+(points 3 166 80 230 80 230 117))
+(connect D1:0 D2:0
+(points 2 230 165 230 221))
+(connect D6:1 D7:1
+(points 2 345 120 378 120))
+(connect D1:1 D7:2
+(points 2 289 140 378 140))
+(connect D5:1 D8:1
+(points 2 345 290 368 290))
+(connect D2:1 D8:2
+(points 2 293 310 368 310))
+(connect D10:1 D9:1
+(points 4 585 170 610 170 610 200 656 200))
+(connect D2:0 D9:2
+(points 5 230 381 230 400 500 400 500 220 656 220))
+(connect D7:1 D10:1
+(points 4 482 130 500 130 500 160 554 160))
+(connect D8:1 D10:2
+(points 4 472 300 490 300 490 180 554 180))
+(connect D9:1 O1:1
+(points 4 744 210 760 210 760 298 1043 298)))
+(stackingOrder 1 2 4 8 5 6 9 7 10 3 0))))
+(context 4
+(properties
+(name "GetPreambleGroups")
+(variableName GetPreambleGroups)
+(variableScope glob)
+(trigMode deg)
+(nextID 8)
+(popupTitleText "UserFunction")
+(popupMoveable 1))
+(interface
+(input 1
+(name "string")
+(optional yes))
+(output 1
+(type data)
+(name "Record")
+(lock constraints)
+(optional yes)))
+(deviceList
+(device 0 FORMULA
+(properties
+(name "string.Split(separator);")
+(description2 1
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\froman\\fprq2\\fcharset0 Times New Roman;}{\\f1\\fmodern\\fprq1\\fcharset128 MS Mincho;}{\\f2\\fswiss\\fprq2\\fcharset0 Microsoft Sans Serif;}}\r\n\\viewkind4\\uc1\\pard\\sb100\\sa100\\ul\\b\\f0\\fs28 System.String.Split\\ulnone\\b0\\f1\\par\r\n\\f0\\fs24 This function identifies the substrings in the input string that are delimited by one or more characters specified in the separator character, and then places the substrings into a string array.  It is a .NET Framework call and can be found in the Function and Object Browser here:\\par\r\n\\pard\\f2\\fs17\\par\r\n\\b\\f0\\fs24 Assembly\\b0 : Mscorlib\\par\r\n\\b Namespace\\b0 : System\\par\r\n\\b Type\\b0 : String\\ul\\b\\fs28\\par\r\n}\r\n"
+)
+(variableScope cont)
+(expr 3 "// See object description for more information"
+"Set str = asClrType(string, System.String);"
+"str = str.Split(asClrType(separator, System.String).ToCharArray());"))
+(interface
+(input 1
+(name "string")
+(optional yes))
+(input 2
+(name "separator")
+(requires
+(datatype Text)
+(shape "Scalar"))
+(optional yes))
+(output 1
+(name "str")
+(optional yes))))
+(device 1 LITERALCONSTANT
+(properties
+(name "Text")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data  ";"))
+(initValue Text
+(data  ""))))
+(device 2 FOREACH
+(properties
+(name "For Each Element In")
+(variableScope cont))
+(interface
+(input 1
+(name "Collection")
+(tag "Collection")
+(lock name)
+(optional yes))
+(output 1
+(name "Element")
+(lock name constraints))))
+(device 3 LITERALCONSTANT
+(properties
+(name "Text")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data  "IDEN\\(NAME \"(?<NAME>.*?)\""))
+(initValue Text
+(data  ""))))
+(device 4 DOTNETBUILDER
+(properties
+(name "System.Text.RegularExpressions.Regex")
+(variableScope cont)
+(transactions 1
+"regex = CreateInstance(\"System\", \"System.Text.RegularExpressions.Regex\", pattern)"
+)
+(parmInfo 5 "4" "T 0" "T 0" "T 0" "T 0")
+(memberInfos 1 "Void .ctor(System.String)")
+(statics 1 "0")
+(assemblyQualifiedName
+"System.Text.RegularExpressions.Regex, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+)
+(objectName "regex"))
+(interface
+(input 1
+(name "pattern")
+(requires
+(datatype Text)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(output 1
+(name "regex")
+(optional yes)))
+(implementation))
+(device 5 DOTNETBUILDER
+(properties
+(name "System.Text.RegularExpressions.Regex")
+(variableScope cont)
+(transactions 2 "return = regex.Matches(preamble)"
+"NAMENum = regex.GroupNumberFromName(\"NAME\")")
+(parmInfo 6 "2" "T 0" "T 0" "2" "T 0" "T 0")
+(memberInfos 2
+"System.Text.RegularExpressions.MatchCollection Matches(System.String)"
+"Int32 GroupNumberFromName(System.String)")
+(statics 2 "0" "0")
+(assemblyQualifiedName
+"System.Text.RegularExpressions.Regex, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+)
+(objectName "regex"))
+(interface
+(input 1
+(name "regex")
+(optional yes))
+(input 2
+(name "preamble")
+(requires
+(datatype Text)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(output 1
+(name "return")
+(optional yes))
+(output 2
+(name "NAMENum")
+(optional yes)))
+(implementation))
+(device 6 DOTNETBUILDER
+(properties
+(name "System.Text.RegularExpressions.MatchCollection")
+(variableScope cont)
+(transactions 1 "value = matchCollection.Item(0).Groups.Item(groupnum).Value")
+(parmInfo 4 "3" "T 0" "T 0" "T 0")
+(memberInfos 1 "System.String Value")
+(statics 1 "0")
+(assemblyQualifiedName
+"System.Text.RegularExpressions.MatchCollection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+)
+(objectName "matchCollection"))
+(interface
+(input 1
+(name "matchCollection")
+(optional yes))
+(input 2
+(name "groupnum")
+(requires
+(datatype Int32)
+(shape "Scalar"))
+(lock name constraints)
+(optional yes))
+(output 1
+(name "value")
+(optional yes)))
+(implementation))
+(device 7 TORECORD
+(properties
+(variableScope cont)
+(outputType array))
+(interface
+(input 1
+(name "Name")
+(optional yes))
+(input 2
+(name "Record")
+(optional yes))
+(output 1
+(name "Record"))))
+(configuration
+(connect I1:1 D0:1)
+(connect D1:1 D0:2)
+(connect D0:1 D2:1)
+(connect D3:1 D4:1)
+(connect D4:1 D5:1)
+(connect D2:1 D5:2)
+(connect D5:1 D6:1)
+(connect D5:2 D6:2)
+(connect D6:1 D7:1)
+(connect D2:1 D7:2)
+(connect D7:1 O1:1)))
+(contextCarrier
+(active detail)
+(detail
+(extent 868 279)
+(anchorPt 214 136)
+(configuration
+(devCarrierFor 0
+(active icon)
+(icon
+(extent 134 25))
+(open
+(extent 394 80))
+(terminals on)
+(pinCenter 180 80))
+(devCarrierFor 1
+(active icon)
+(icon
+(extent 25 15))
+(open
+(extent 174 29))
+(pinCenter 80 90))
+(devCarrierFor 2
+(active icon)
+(icon
+(extent 122 51)
+(iconImage "loop.icn"))
+(open
+(extent 158 31))
+(pinCenter 340 90))
+(devCarrierFor 3
+(active icon)
+(icon
+(extent 25 15))
+(open
+(extent 174 29))
+(pinCenter 450 160))
+(devCarrierFor 4
+(active icon)
+(icon
+(extent 34 25))
+(open
+(extent 221 74))
+(terminals on)
+(pinCenter 500 160))
+(devCarrierFor 5
+(active icon)
+(icon
+(extent 54 25))
+(open
+(extent 344 156))
+(terminals on)
+(pinCenter 600 170))
+(devCarrierFor 6
+(active icon)
+(icon
+(extent 44 25))
+(open
+(extent 274 74))
+(terminals on)
+(pinCenter 670 170))
+(devCarrierFor 7
+(active icon)
+(icon
+(extent 78 51)
+(iconImage "build.icn"))
+(open
+(extent 104 74))
+(terminals on)
+(pinCenter 760 190))
+(connect I1:1 D0:1
+(points 4 -214 3 10 3 10 70 110 70))
+(connect D1:1 D0:2
+(points 2 95 90 110 90))
+(connect D0:1 D2:1
+(points 4 249 80 260 80 260 90 276 90))
+(connect D3:1 D4:1
+(points 2 465 160 480 160))
+(connect D4:1 D5:1
+(points 2 519 160 570 160))
+(connect D2:1 D5:2
+(points 6 403 90 420 90 420 200 540 200 540 180 570 180))
+(connect D5:1 D6:1
+(points 2 629 160 645 160))
+(connect D5:2 D6:2
+(points 2 629 180 645 180))
+(connect D6:1 D7:1
+(points 4 694 170 700 170 700 180 718 180))
+(connect D2:1 D7:2
+(points 8 403 90 420 90 420 200 540 200 540 210 700 210 700 200 718 200))
+(connect D7:1 O1:1
+(points 4 801 190 820 190 820 3 653 3)))
+(stackingOrder 0 1 2 3 4 5 6 7))))
+(context 2
+(properties
+(name "GetStatSlope")
+(variableName GetStatSlope)
+(variableScope glob)
+(trigMode deg)
+(nextID 6)
+(popupTitleText "UserFunction")
+(popupMoveable 1))
+(interface
+(output 1
+(type data)
+(name "StatSope")
+(lock constraints)
+(optional yes)))
+(deviceList
+(device 0 CALL
+(properties
+(name "Call RealConcat")
+(variableScope cont)
+(callFunc "RealConcat")
+(parmMode rev30))
+(interface
+(input 1
+(name "Str1")
+(optional yes))
+(input 2
+(name "Str2")
+(optional yes))
+(output 1
+(name "Concat")
+(lock name constraints)
+(optional yes))))
+(device 1 LITERALCONSTANT
+(properties
+(name "Text")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data  "TRIG:A:LOG:STAT:SLOP "))
+(initValue Text
+(data  ""))))
+(device 3 CONFIRM25
+(properties
+(name "Save Settings")
+(variableScope cont)
+(enterButton 0)
+(escapeButton 0)
+(isAssigned2FKey None)
+(okDisabled 1))
+(interface
+(output 1
+(name "Go")
+(lock name constraints)))
+(implementation))
+(device 4 ENUMCONSTANT
+(properties
+(name "Cyclic Button")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Enum")
+(lock name constraints))
+(output 2
+(name "Ordinal")
+(lock name constraints)))
+(implementation
+(value Enum
+(values
+("POS" 0)
+("NEG" 1))
+(data  "POS"))
+(initValue Text
+(data  "POS"))))
+(device 5 LABEL
+(properties
+(name "Select State Slope")
+(variableScope cont)
+(labelValue "Select State Slope"))
+(implementation))
+(configuration
+(connect D1:1 D0:1)
+(connect D3:1 D0:2)
+(connect D2:1 D3:0)
+(connect D0:1 O1:1))
+(ShowOnExecPanel
+(relativeOrigin 177 139)))
+(contextCarrier
+(wndRestoredOrigin 162 162)
+(wndRestoredExtent 289 158)
+(wndState max)
+(active detail)
+(panel
+(extent 136 110)
+(drawGrid "on")
+(widget 4 detail
+(relativeOrigin 0 0)
+(PID 0)
+(title off)
+(tabStop off)
+(tabIndex 0)
+(borderStyle none)
+(extent 112 27)
+(just l))
+(widget 3 detail
+(relativeOrigin 0 30)
+(PID 1)
+(title off)
+(tabIndex 1)
+(borderStyle flat)
+(extent 116 26)
+(format cyclic))
+(widget 2 detail
+(relativeOrigin 0 60)
+(PID 2)
+(title off)
+(tabIndex 2)
+(borderStyle none)
+(extent 120 22)))
+(detail
+(extent 606 656)
+(anchorPt 0 0)
+(configuration
+(devCarrierFor 0
+(active icon)
+(icon
+(extent 99 25))
+(open
+(extent 176 51))
+(terminals on)
+(pinCenter 450 130))
+(devCarrierFor 1
+(active icon)
+(icon
+(extent 25 15))
+(open
+(extent 174 29))
+(pinCenter 330 100))
+(devCarrierFor 3
+(active open)
+(icon
+(extent 82 0))
+(open
+(extent 47 22))
+(title off)
+(pinCenter 220 100))
+(devCarrierFor 4
+(active open)
+(icon)
+(open
+(extent 113 25)
+(format cyclic))
+(pinCenter 310 150))
+(devCarrierFor 5
+(active open)
+(icon
+(extent 110 0))
+(open
+(extent 112 27)
+(just l))
+(title off)
+(pinCenter 460 100))
+(connect D1:1 D0:1
+(points 4 345 100 390 100 390 120 398 120))
+(connect D3:1 D0:2
+(points 2 369 140 398 140))
+(connect D2:1 D3:0
+(points 3 246 100 310 100 310 117))
+(connect D0:1 O1:1
+(points 4 502 130 520 130 520 323 605 323)))
+(stackingOrder 3 2 1 4 0))))
+(context 0
+(properties
+(name "RealConcat")
+(variableName RealConcat)
+(variableScope glob)
+(trigMode deg)
+(nextID 4)
+(popupTitleText "UserFunction1")
+(popupMoveable 1))
+(interface
+(input 1
+(name "Str1")
+(optional yes))
+(input 2
+(name "Str2")
+(optional yes))
+(output 1
+(type data)
+(name "Concat")
+(lock constraints)
+(optional yes)))
+(deviceList
+(device 0 FORMULA
+(properties
+(name "String.Join(separator, textArray);")
+(description2 1
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\froman\\fprq2\\fcharset0 Times New Roman;}{\\f1\\fmodern\\fprq1\\fcharset128 MS Mincho;}{\\f2\\froman\\fcharset0 Times New Roman;}{\\f3\\fswiss\\fprq2\\fcharset0 Microsoft Sans Serif;}{\\f4\\fnil\\fcharset0 Microsoft Sans Serif;}}\r\n\\viewkind4\\uc1\\pard\\sb100\\sa100\\ul\\b\\f0\\fs28 System.String.Join\\ulnone\\b0\\f1\\par\r\n\\f2\\fs24 Concatenates a specified separator String between each element of a specified \\b String\\b0  array, yielding a single concatenated string\\f0 .  It is a .NET Framework call and can be found in the Function and Object Browser here:\\par\r\n\\pard\\f3\\fs17\\par\r\n\\b\\f0\\fs24 Assembly\\b0 : Mscorlib\\par\r\n\\b Namespace\\b0 : System\\par\r\n\\b Type\\b0 : String\\f4\\fs17\\par\r\n}\r\n"
+)
+(variableScope cont)
+(expr 2 "// See object description for more information"
+"System.String.Join(separator, textArray);"))
+(interface
+(input 1
+(name "separator")
+(requires
+(datatype Text)
+(shape "Scalar"))
+(optional yes))
+(input 2
+(name "textArray")
+(requires
+(datatype Text)
+(shape "Array 1D"))
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 1 LITERALCONSTANT
+(properties
+(name "Text")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(input 1
+(type control)
+(name "Default Value")
+(requires
+(datatype Text))
+(lock name constraints)
+(optional yes))
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data  ""))
+(initValue Text
+(data  ""))))
+(device 2 VECTORCONCATENATOR
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "A"))
+(input 2
+(name "B")
+(optional yes))
+(output 1
+(name "Array")
+(tag "Array"))))
+(configuration
+(connect D1:1 D0:1)
+(connect D2:1 D0:2)
+(connect I1:1 D2:1)
+(connect I2:1 D2:2)
+(connect D0:1 O1:1)))
+(contextCarrier
+(active detail)
+(detail
+(extent 1412 444)
+(anchorPt 0 0)
+(configuration
+(devCarrierFor 0
+(active icon)
+(icon
+(extent 189 25))
+(open
+(extent 284 66))
+(terminals on)
+(pinCenter 670 300))
+(devCarrierFor 1
+(active open)
+(icon)
+(open
+(extent 174 29))
+(pinCenter 350 230))
+(devCarrierFor 2
+(active icon)
+(icon
+(extent 81 25))
+(open)
+(terminals on)
+(pinCenter 350 290))
+(connect D1:1 D0:1
+(points 4 439 230 460 230 460 290 573 290))
+(connect D2:1 D0:2
+(points 4 393 290 410 290 410 310 573 310))
+(connect I1:1 D2:1
+(points 4 0 111 10 111 10 280 307 280))
+(connect I2:1 D2:2
+(points 4 0 331 10 331 10 300 307 300))
+(connect D0:1 O1:1
+(points 4 767 300 790 300 790 221 1411 221)))
+(stackingOrder 1 2 0)))))
+(device 109 LITERALCONSTANT
+(properties
+(name "Text")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data 
+"(DIF(VERS 1995.0 SCOP PRE)IDEN(NAME \"CHAN1\" INST(NAME \"TVS645\" ID \"B010226\"))ENC(FORM ASC NVAL -32768 ORAN 32767 URAN -32767)DIM=X(TYPE IMPL SCAL 2.000000E-05 OFFS 0.000000E+00 SIZE 512 UNIT \"S\")DIM=UPP(TYPE EXPL SCAL 3.100198E-05 OFFS 2.500000E-01 SIZE 512 UNIT \"V\")DIM=LOW(TYPE EXPL SCAL 3.100198E-05 OFFS 2.500000E-01 SIZE 512 UNIT \"V\")TRAC=TU(IND(LAB X) DEP(LAB UPP))TRAC=TL(IND(LAB X) DEP(LAB LOW))VIEW=ENVELOPE(ENV(UPP TU LOW TL))DATA(CURV(CTYP NONE)))"
+))
+(initValue Text
+(data  ""))))
+(device 115 TEXTDISPLAY
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "Data"))))
+(device 118 CALL
+(properties
+(name "Call GetPreambleGroups")
+(variableScope cont)
+(callFunc "GetPreambleGroups")
+(parmMode rev30))
+(interface
+(input 1
+(name "A")
+(optional yes))
+(output 1
+(name "X")
+(optional yes))))
+(device 125 TEXTDISPLAY
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "Data"))))
+(device 128 CALL
+(properties
+(name "Call GetMaxMinNan")
+(variableScope cont)
+(callFunc "GetMaxMinNan")
+(parmMode rev30))
+(interface
+(input 1
+(name "Collection")
+(optional yes))
+(output 1
+(name "Record")
+(lock name constraints)
+(optional yes))))
+(device 129 TEXTDISPLAY
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "Data"))))
+(device 130 CALL
+(properties
+(name "Call GetAxisParams")
+(variableScope cont)
+(callFunc "GetAxisParams")
+(parmMode rev30))
+(interface
+(input 1
+(name "Collection")
+(optional yes))
+(input 2
+(name "axis")
+(optional yes))
+(output 1
+(name "Record")
+(lock name constraints)
+(optional yes))))
+(device 131 LITERALCONSTANT
+(properties
+(name "Text")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data  "DIM=X"))
+(initValue Text
+(data  ""))))
+(device 132 LITERALCONSTANT
+(properties
+(name "Text")
+(variableScope cont)
+(enableEditing 1))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data  "DIM=UPP"))
+(initValue Text
+(data  ""))))
+(device 133 CALL
+(properties
+(name "Call GetAxisParams")
+(variableScope cont)
+(callFunc "GetAxisParams")
+(parmMode rev30))
+(interface
+(input 1
+(name "Collection")
+(optional yes))
+(input 2
+(name "axis")
+(optional yes))
+(output 1
+(name "Record")
+(lock name constraints)
+(optional yes))))
+(device 134 TEXTDISPLAY
+(properties
+(variableScope cont))
+(interface
+(input 1
+(name "Data"))))
+(configuration
+(connect D2:1 D1:1)
+(connect D0:1 D2:1)
+(connect D6:1 D3:1)
+(connect D2:1 D4:1)
+(connect D4:1 D5:1)
+(connect D2:1 D6:1)
+(connect D7:1 D6:2)
+(connect D2:1 D9:1)
+(connect D8:1 D9:2)
+(connect D9:1 D10:1)))
+(contextCarrier
+(wndOrigin 664 30)
+(wndState res)
+(active detail)
+(panel
+(extent 494 411)
+(drawGrid "on"))
+(detail
+(extent 702 386)
+(anchorPt 843 278)
+(configuration
+(devCarrierFor 109
+(active icon)
+(icon
+(extent 25 15))
+(open
+(extent 254 36))
+(pinCenter -720 -40))
+(devCarrierFor 115
+(active open)
+(icon)
+(open
+(extent 364 66))
+(pinCenter -420 -160))
+(devCarrierFor 118
+(active icon)
+(icon
+(extent 152 15))
+(open
+(extent 176 51))
+(terminals on)
+(pinCenter -540 -40))
+(devCarrierFor 125
+(active open)
+(icon)
+(open
+(extent 364 66))
+(pinCenter 340 -160))
+(devCarrierFor 128
+(active icon)
+(icon
+(extent 117 15))
+(open
+(extent 176 51))
+(terminals on)
+(pinCenter -360 -40))
+(devCarrierFor 129
+(active open)
+(icon)
+(open
+(extent 364 66))
+(pinCenter -40 -160))
+(devCarrierFor 130
+(active icon)
+(icon
+(extent 121 25))
+(open
+(extent 176 51))
+(terminals on)
+(pinCenter -350 0))
+(devCarrierFor 131
+(active icon)
+(icon
+(extent 25 15))
+(open
+(extent 174 29))
+(pinCenter -460 10))
+(devCarrierFor 132
+(active icon)
+(icon
+(extent 25 15))
+(open
+(extent 174 29))
+(pinCenter -460 70))
+(devCarrierFor 133
+(active icon)
+(icon
+(extent 121 25))
+(open
+(extent 176 51))
+(terminals on)
+(pinCenter -350 60))
+(devCarrierFor 134
+(active open)
+(icon)
+(open
+(extent 364 66))
+(pinCenter -40 -60))
+(connect D2:1 D1:1
+(points 6 -462 -40 -440 -40 -440 -70 -620 -70 -620 -160 -605 -160))
+(connect D0:1 D2:1
+(points 2 -705 -40 -619 -40))
+(connect D6:1 D3:1
+(points 4 -287 0 150 0 150 -160 155 -160))
+(connect D2:1 D4:1
+(points 2 -462 -40 -421 -40))
+(connect D4:1 D5:1
+(points 4 -299 -40 -230 -40 -230 -160 -225 -160))
+(connect D2:1 D6:1
+(points 4 -462 -40 -440 -40 -440 -10 -413 -10))
+(connect D7:1 D6:2
+(points 2 -445 10 -413 10))
+(connect D2:1 D9:1
+(points 6 -462 -40 -440 -40 -440 -10 -430 -10 -430 50 -413 50))
+(connect D8:1 D9:2
+(points 2 -445 70 -413 70))
+(connect D9:1 D10:1
+(points 4 -287 60 -270 60 -270 -60 -225 -60)))
+(stackingOrder 1 4 5 7 3 10 8 9 0 6 2))
+(numberFormats
+(realFormat standard)
+(realSigDigits 4)
+(realRadixSpec 4)
+(integerBase decimal))))

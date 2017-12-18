@@ -1,0 +1,132 @@
+(saveFormat "7.0")
+(date "Wed 02/Nov/2016 14:50:27 ")
+(veerev "9.32.17704.1")
+(platform "PC")
+(execMode v6)
+(prefExecMode v9)
+(filterNAN 0)
+(workspaceStackingOrder M)
+(sysconfig
+(iodevice "newInstrument4"
+(type ASRL)
+(channel 200)
+(readTerm "\n")
+(fs ",")
+(eol "\n")
+(multiField dataOnly)
+(arrayFormat linear)
+(timeout 5)
+(byteOrder 0)
+(ppAddr "ASRL10::INSTR")
+(model "")
+(eoiEnabled 1)
+(VISAlias "LPT1")
+(VISAddr "ASRL10::INSTR")
+(model ""
+(standard 488.2))
+(baudRate 9600)
+(charSize 8)
+(stopBits 1)
+(parity off)
+(handshake off)
+(recvBufferSize 4096))
+(iodevice "newInstrument5"
+(type GPIB-VISA)
+(channel 131)
+(readTerm "\n")
+(fs ",")
+(eol "\n")
+(multiField dataOnly)
+(arrayFormat linear)
+(timeout 5)
+(byteOrder 0)
+(idn "nigpib-vxi")
+(ppAddr "GPIB1::1::0::INSTR")
+(ScpiFileName "nigpib-vxi.xml")
+(model "nigpib-vxi")
+(eoiEnabled 1)
+(VISAddr "GPIB1::1::0::INSTR")
+(model "nigpib-vxi"
+(standard 488)))
+(iodevice "newInstrument6"
+(type GPIB-VISA)
+(channel 131)
+(readTerm "\n")
+(fs ",")
+(eol "\n")
+(multiField dataOnly)
+(arrayFormat linear)
+(timeout 5)
+(byteOrder 0)
+(idn "tetvs645")
+(ppAddr "GPIB1::1::6::INSTR")
+(ScpiFileName "tetvs645.xml")
+(model "tetvs645")
+(eoiEnabled 1)
+(VISAddr "GPIB1::1::6::INSTR")
+(model "tetvs645"
+(standard 488))))
+(SaveCF no)
+(device 0 ROOTCONTEXT
+(assemblyRefs
+(assemblyRef 1
+(displayName
+"mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")
+(filename "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\mscorlib.dll"))
+(assemblyRef 2
+(displayName
+"System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+)
+(filename "C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\drawing.dll"))
+(assemblyRef 3
+(displayName
+"System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+)
+(filename
+"C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\System.Windows.Forms.dll"))
+(selectedNamespaces ""))
+(properties
+(variableName Main)
+(variableScope glob)
+(trigMode deg)
+(nextID 4)
+(popupTitleText "Untitled")
+(popupMoveable 1)
+(deleteGlobals 0))
+(deviceList
+(device 2 UNKNOWN
+(interface
+(input 1
+(name "Page1")
+(requires
+(shape "Scalar"))
+(lock name constraints)
+(optional yes)))
+(implementation))
+(configuration)
+(ShowOnExecPanel))
+(contextCarrier
+(wndOrigin 2 2)
+(wndState res)
+(active detail)
+(panel
+(extent 1161 642)
+(drawGrid "on"))
+(detail
+(extent 1161 642)
+(anchorPt -26 -11)
+(configuration
+(devCarrierFor 2
+(active icon)
+(icon
+(extent 69 15))
+(open
+(editing enabled))
+(terminals on)
+(titleBg "Error Object")
+(pinCenter 20 0))))
+(numberFormats
+(realFormat standard)
+(realSigDigits 4)
+(realRadixSpec 4)
+(integerBase decimal))))
